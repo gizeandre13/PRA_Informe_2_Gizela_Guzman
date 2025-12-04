@@ -1,0 +1,45 @@
+# Requirements para Python 3.10 (Windows/conda/venv) — Sep 2025
+# Probados con PyTorch 2.5.1 + CUDA 12.1 instalado por conda (no incluimos torch/vision/audio aquí).
+
+# --- Núcleo científico ---
+numpy>=2.0,<2.3
+scipy>=1.14,<1.17
+pillow>=10.3,<12.0
+matplotlib>=3.8,<3.11
+scikit-learn>=1.5,<1.7
+scikit-image>=0.25,<0.26
+networkx>=3.2,<3.6
+
+# --- I/O imagen/geo ---
+imageio>=2.34,<2.36
+tifffile>=2024.8.30
+
+# --- Progreso y utilidades ---
+tqdm>=4.66,<5.0
+
+# --- Jupyter/IPython (para tqdm.auto con widgets) ---
+ipython>=8.20,<10.0
+ipykernel>=6.25,<7.0
+notebook>=7.1,<8.0
+jupyter-client>=8.6,<9.0
+nbconvert>=7.14,<8.0
+nbformat>=5.9,<6.0
+traitlets>=5.13,<6.0
+tornado>=6.3,<6.5
+pyzmq>=25.1,<27.0
+ipywidgets==8.1.7
+jupyterlab-widgets==3.0.15
+widgetsnbextension==4.0.14
+
+# --- Plantillas/templating ---
+Jinja2==3.1.6
+MarkupSafe==3.0.2
+
+# --- Fechas ---
+python-dateutil>=2.9.0.post0
+pytz>=2024.1
+
+# --- Opcionales ---
+# pandas>=2.2,<2.3
+# seaborn>=0.13,<0.14
+# opencv-python>=4.9,<4.11  # mejor via conda en Windows si hay conflictos
