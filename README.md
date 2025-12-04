@@ -13,21 +13,30 @@ El conjunto de datos utilizado para el entrenamiento y evaluación se construyó
 - División en mosaicos de 2000 × 2000 píxeles
 - Cada mosaico se utiliza como entrada del modelo en formato RGB
 
-**ISPRS Vaihingen**: ortofotos **IRRG** (9 cm GSD)
+**Información vectorial (etiquetado)**: 
+- Escala 1:1.000
+- Estructurada bajo estándares cartográficos del IGAC
+- Los vectores se rasterizaron para generar los mapas de etiquetas alineados con las ortoimágenes.
 
-Clases (ISPRS):  
-🛣️ **Carreteras**
-🏠 **Edificios**
-🌱 **Vegetación baja**
-🌳 **Árboles**
-🚗 **Carros**
-❓ **Desorden**
+Las clases consideradas en esta implementación son:
 
-Link de descarga: [https://www.isprs.org/resources/datasets/benchmarks/UrbanSemLab/Default.aspx]
+- ❓ **Indefinido**
+- 🏠 **Construcciones**
+- 🛣️ **Vías**
+- 🌳 **Árboles**
+- 🧱 **Muros**
 
-## 💻 Notebook
+## 💻 Notebooks
 
-Notebook Jupyter con el código fuente del proyecto, que inculye la carga de datos, preprocesamiento, entrenamiento SegNet, evaluación y generación de resultados.
+Se anexan los cuatro notebooks correspondientes a las configuraciones evaluadas, cada uno documentando el proceso de entrenamiento, las métricas obtenidas y la inferencia visual generada para la segmentación semántica.
+
+| Configuración | Descripción breve                                                         |
+| ------------- | ------------------------------------------------------------------------- |
+| **1**         | Entrenamiento base, sin pesos, 10 épocas                                  |
+| **2**         | Entrenamiento con pesos por frecuencia inversa, 10 épocas                 |
+| **3**         | Entrenamiento con pesos balanceados y normalizados, 10 épocas             |
+| **4**         | Entrenamiento con pesos balanceados y normalizados, 50 épocas             |
+
 
 ## ⚙️ Utilidades
 
@@ -35,18 +44,9 @@ Este notebook requiere algunas bibliotecas útiles, como `torch`, `scikit-image`
 
 Se adjunta archivo de texto que contiene la lista de librerías necesarias junto con sus versiones compatibles, optimizadas para Python 3.10.0.
 
-## 🧠 Modelo
-
-Se adjunta el archivo .pt del modelo SegNet entrenado sobre el dataset ISPRS Vaihingen, listo para inferencia y evaluación.
-
 ## 📝 Documentos
 
-Se incluye un reporte en formato de artículo que describe la implementación, entrenamiento y evaluación de la arquitectura SegNet.
-
-## 🗺️ Resultados 
-
-Se incluyen cuatro mosaicos resultantes del proceso de inferencia realizado con el modelo entrenado sobre la arquitectura SegNet.
-
+Se incluye un reporte en formato de artículo que describe la implementación, entrenamiento y evaluación de los resultados obtenidos en cada configuración.
 
 ## 🙌 Créditos
 
